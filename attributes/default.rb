@@ -1,7 +1,7 @@
 default[:distelli][:agent][:user]             = 'distelli'
 default[:distelli][:agent][:group]            = 'distelli'
 
-default[:distelli][:agent][:version]          = '2.03'
+default[:distelli][:agent][:version]          = '2.05'
 default[:distelli][:agent][:url]              = 'http://download.distelli.com/'
 default[:distelli][:agent][:package]          = "DistelliAgent-#{default[:distelli][:agent][:version]}.tar.gz"
 

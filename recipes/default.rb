@@ -141,6 +141,7 @@ bash "install_agent" do
   find -L /distelli -type f -exec chmod 0644 {} + >> /usr/local/DistelliAgent/logs/install.log 2>&1
   find -L /distelli -type s -exec chmod 0700 {} + >> /usr/local/DistelliAgent/logs/install.log 2>&1
   find -L /distelli -type d -exec chmod 0755 {} + >> /usr/local/DistelliAgent/logs/install.log 2>&1
+  find -L /distelli -type f -name 'distelli-*.sh' -exec chmod 0755 {} + >> /usr/local/DistelliAgent/logs/install.log 2>&1
   EOH
 end
 

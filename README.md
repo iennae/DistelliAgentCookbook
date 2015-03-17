@@ -1,7 +1,7 @@
 DistelliAgentCookbook
 =====================
 
-This chef cookbook installs the Distelli Agent on a server. 
+This chef cookbook installs the <a href="https://www.distelli.com" target="_blank">Distelli</a> Agent on a server. 
 
 Usage
 -----

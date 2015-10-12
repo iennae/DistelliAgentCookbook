@@ -38,7 +38,11 @@ end
 execute "distelli agent install" do
     if platform?('windows')
         command "distelli.exe agent install"
-        environment 'PATH' => "#{ENV['PROGRAMFILES']}\\Distelli;#{ENV['PATH']}"
+        base = "#{ENV['PROGRAMFILES']}\\Distelli"
+        if not Dir.exist? base then
+            base = "#{ENV['PROGRAMW6432']}\\Distelli"
+        end
+        environment 'PATH' => "#{base};#{ENV['PATH']}"
     else
         environment 'PATH' => "/usr/local/bin:#{ENV['PATH']}"
     end

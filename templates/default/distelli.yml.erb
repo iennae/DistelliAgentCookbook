@@ -1,2 +1,5 @@
 DistelliAccessToken: '<%= node[:distelli][:agent][:access_token] %>'
 DistelliSecretKey: '<%= node[:distelli][:agent][:secret_key] %>'
+<% if node[:distelli][:agent][:endpoint] %>
+AgentEndpoint: '<%= node[:distelli][:agent][:endpoint] %>'
+<% end %>

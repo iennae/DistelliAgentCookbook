@@ -6,13 +6,13 @@ This chef cookbook installs the <a href="https://www.distelli.com" target="_blan
 Usage
 -----
 
-Include `distelli_agent` in your `run_list` and set your attributes with your Distelli Access Token and Distelli Secret key found in your Distelli Account.
+Include `distelli` in your `run_list` and set your attributes with your Distelli Access Token and Distelli Secret key found in your Distelli Account.
 
 ```json
 {
   "name": "my_node",
   "run_list": [
-    "recipe[distelli_agent]"
+    "recipe[distelli]"
   ],
   "default": {
     "distelli": {

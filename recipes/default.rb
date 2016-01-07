@@ -7,11 +7,17 @@
 # All rights reserved
 #
 
+download_url="https://www.distelli.com/download/client"
+version=node[:distelli][:agent][:version]
+if ! version.nil? && ! version.empty? then
+    download_url << "/" + version
+end
+
 # Install the CLI:
 temp=Chef::Config[:file_cache_path]
-if platform?('windows')
+if platform?('windows') then
     remote_file "#{temp}\\install-distelli.ps1" do
-        source "https://www.distelli.com/download/client.ps1"
+        source download_url + ".ps1"
         mode 00755
     end
     powershell_script "#{temp}\\install-distelli.ps1" do
@@ -19,7 +25,7 @@ if platform?('windows')
     end
 else
     remote_file "#{temp}/install-distelli.sh" do
-        source "https://www.distelli.com/download/client"
+        source download_url
         mode 00755
     end
     execute "#{temp}/install-distelli.sh"
@@ -36,7 +42,7 @@ end
 
 # Start the agent
 execute "distelli agent install" do
-    if platform?('windows')
+    if platform?('windows') then
         command "distelli.exe agent install"
         base = "#{ENV['PROGRAMFILES']}\\Distelli"
         if not Dir.exist? base then

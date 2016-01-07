@@ -1,5 +1,13 @@
 DistelliAccessToken: '<%= node[:distelli][:agent][:access_token] %>'
 DistelliSecretKey: '<%= node[:distelli][:agent][:secret_key] %>'
-<% if node[:distelli][:agent][:endpoint] %>
-AgentEndpoint: '<%= node[:distelli][:agent][:endpoint] %>'
-<% end %>
+<%  endpoint = node[:distelli][:agent][:endpoint]
+    if endpoint then
+        %>AgentEndpoint: '<%= endpoint %>'
+<%  end
+    envs = node[:distelli][:agent][:environments]
+    if envs and envs.size > 0 then
+        %>Environments:
+<%      envs.each do |env|
+    %>    - <%= env %>
+<%      end
+    end %>

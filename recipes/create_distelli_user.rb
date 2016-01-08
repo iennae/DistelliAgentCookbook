@@ -28,7 +28,7 @@ end
 # manitory, but it is recommended so your deployment scripts can
 # use sudo.
 file "/etc/sudoers.d/distelli" do
-    content = "distelli ALL=(ALL) NOPASSWD:ALL\nDefaults:distelli !requiretty"
-    mode="0400"
-    owner="root"
+    content "distelli ALL=(ALL) NOPASSWD:ALL\nDefaults:distelli !requiretty\n"
+    mode "0400"
+    owner "root"
 end

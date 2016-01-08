@@ -41,7 +41,7 @@ template "/etc/distelli.yml" do
 end
 
 # Start the agent
-execute "distelli agent install" do
+execute "distelli agent install -readyml" do
     if platform?('windows') then
         command "distelli.exe agent install"
         base = "#{ENV['PROGRAMFILES']}\\Distelli"

@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: distelli_agent
+# Cookbook Name:: distelli
 # Recipe:: default
 #
-# Copyright 2014, Distelli Inc.
+# Copyright 2016, Distelli Inc.
 #
 # All rights reserved
 #

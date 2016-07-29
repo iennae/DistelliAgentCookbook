@@ -25,7 +25,7 @@ end
 # Most modern linux installs have that by default (but not OS-X).
 #
 # Also note that sudo access by the distelli user is not strictly
-# manitory, but it is recommended so your deployment scripts can
+# mandatory, but it is recommended so your deployment scripts can
 # use sudo.
 file "/etc/sudoers.d/distelli" do
     content "distelli ALL=(ALL) NOPASSWD:ALL\nDefaults:distelli !requiretty\n"

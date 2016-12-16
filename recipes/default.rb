@@ -34,7 +34,7 @@ end
 # Create the agent config file
 template "/etc/distelli.yml" do
     if platform?('windows') then
-        path "#{ENV['SYSTEMDRIVE']}\\distelli.yml"
+        path "#{ENV['SystemDrive']}\\distelli.yml"
     end
     source "distelli.yml.erb"
     mode 00644
@@ -44,12 +44,20 @@ end
 execute "distelli agent install -readyml" do
     if platform?('windows') then
         command "distelli.exe agent install"
-        base = "#{ENV['PROGRAMFILES']}\\Distelli"
+        base = "#{ENV['ProgramFiles']}\\Distelli"
         if not Dir.exist? base then
-            base = "#{ENV['PROGRAMW6432']}\\Distelli"
+            base = "#{ENV['ProgramW6432']}\\Distelli"
         end
-        environment 'PATH' => "#{base};#{ENV['PATH']}"
+        environment 'Path' => "#{base};#{ENV['Path']}"
     else
         environment 'PATH' => "/usr/local/bin:#{ENV['PATH']}"
     end
 end
+
+
+
+
+
+
+
+

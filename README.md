@@ -12,7 +12,7 @@ Attributes
 | `[:distelli][:agent][:secret_key]`   | Str  | Secret token to Distelli User Account          | ""                                         |
 | `[:distelli][:agent][:endpoint]`     | Str  | Distelli server URL to register the agent with | nil                                        |
 | `[:distelli][:agent][:download_url]` | Str  | Distelli server URL to download distelli agent | "https://www.distelli.com/download/client" |
-| `[:distelli][:agent][:version]`      | Str  | Distelli server URL to download distelli agent | ""                                         |
+| `[:distelli][:agent][:version]`      | Str  | Agent version                                  | ""                                         |
 
 Usage
 -----

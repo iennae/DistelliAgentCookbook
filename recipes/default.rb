@@ -7,7 +7,7 @@
 # All rights reserved
 #
 
-download_url="https://www.distelli.com/download/client"
+download_url=node[:distelli][:agent][:download_url]
 version=node[:distelli][:agent][:version]
 if ! version.nil? && ! version.empty? then
     download_url << "/" + version
